@@ -9,7 +9,7 @@
     "test": "./test"
   },
   "scripts": {
-    "postinstall": "lerna bootstrap",
+    "postinstall": "lerna bootstrap --use-workspaces",
     "build": "gulp",
     "build-all": "gulp all",
     "release": "lerna bootstrap; lerna publish; gulp version; gulp",
