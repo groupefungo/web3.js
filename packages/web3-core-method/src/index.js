@@ -370,9 +370,10 @@ Method.prototype._confirmTransaction = function (defer, result, payload) {
                 timeoutCount++;
 
                 if (timeoutCount - 1 >= TIMEOUTBLOCK) {
-                    sub.unsubscribe();
-                    promiseResolved = true;
-                    return utils._fireError(new Error('Transaction was not mined within 50 blocks, please make sure your transaction was properly sent. Be aware that it might still be mined!'), defer.eventEmitter, defer.reject);
+                  console.warning('Transaction was not mined within 50 blocks, please make sure your transaction was properly sent. Be aware that it might still be mined!')
+                    // sub.unsubscribe();
+                    // promiseResolved = true;
+                    // return utils._fireError(new Error('Transaction was not mined within 50 blocks, please make sure your transaction was properly sent. Be aware that it might still be mined!'), defer.eventEmitter, defer.reject);
                 }
             });
 
